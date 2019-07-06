@@ -1,6 +1,6 @@
 import React from "react";
-import ConnectTo from "../store/config/Connect";
-import { DecrementCounter, IncrementCounter } from "../store/Counter";
+import ConnectTo from "../store/config/connect";
+import { DecrementCounter, IncrementCounter } from "../store/counter";
 
 const Counter = props => {
   const DecrementCounterHandler = () => props.dispatch(DecrementCounter());
@@ -8,18 +8,18 @@ const Counter = props => {
 
   return (
     <div>
-      <p className="number">{props.counter}</p>
+      <p className="number color-dark">{props.counter}</p>
       <div>
         <button
           aria-label="Menos 1"
-          className="btn"
+          className="btn m-left-20 m-right-20"
           onClick={DecrementCounterHandler}
         >
           -
         </button>
         <button
           aria-label="Mais 1"
-          className="btn"
+          className="btn m-left-20 m-right-20"
           onClick={IncrementCounterHandler}
         >
           +
@@ -29,4 +29,11 @@ const Counter = props => {
   );
 };
 
-export default ConnectTo(Counter);
+const mapStateToProps = ({ counter }, props) => {
+  return {
+    counter,
+    ...props
+  };
+};
+
+export default ConnectTo(mapStateToProps)(Counter);
