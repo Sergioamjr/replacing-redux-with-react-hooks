@@ -1,12 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StoreContext, defaultStore } from "./hooks";
+import { StoreContext } from "./hooks";
 import reducers from "./reducers";
 
 const Store = ({ children }) => {
-  console.log(reducers());
+  const { store, dispatchs } = reducers();
+
+  const triggerDispatchs = action => {
+    for (let i = 0; i < dispatchs.length; i++) {
+      dispatchs[i](action);
+    }
+  };
+
   return (
-    <StoreContext.Provider value={defaultStore}>
+    <StoreContext.Provider
+      value={{
+        store,
+        dispatch: action => triggerDispatchs(action)
+      }}
+    >
       {children}
     </StoreContext.Provider>
   );

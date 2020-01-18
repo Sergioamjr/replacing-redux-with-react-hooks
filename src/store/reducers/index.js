@@ -1,18 +1,14 @@
 import { useReducer } from "react";
-import counterReducer, { counterDefaultStore } from "./counter";
-import authReducer, { authDefaultStore } from "./auth";
+import counterReducer, { counterDefault } from "./counter";
+import authReducer, { authDefault } from "./auth";
 
 const Reducers = () => {
-  const [counterStore, counter] = useReducer(
-    counterReducer,
-    counterDefaultStore
-  );
-
-  const [authStore, auth] = useReducer(authReducer, authDefaultStore);
+  const [counterStore, counter] = useReducer(counterReducer, counterDefault);
+  const [authStore, auth] = useReducer(authReducer, authDefault);
 
   return {
     store: { ...counterStore, ...authStore },
-    dispatch: [counter, auth]
+    dispatchs: [counter, auth]
   };
 };
 

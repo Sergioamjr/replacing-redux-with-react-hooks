@@ -1,11 +1,11 @@
-export const counterDefaultStore = {
+export const counterDefault = {
   counter: 0
 };
 
 export const COUNTER_INC = "COUNTER_INC";
 export const COUNTER_DEC = "COUNTER_DEC";
 
-const counterReducer = (state = counterDefaultStore, action) => {
+const counterReducer = (state = counterDefault, action) => {
   switch (action.type) {
     case COUNTER_INC:
       return {

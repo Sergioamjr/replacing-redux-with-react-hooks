@@ -1,4 +1,4 @@
-export const authDefaultStore = {
+export const authDefault = {
   auth: {
     isLogged: false,
     user: {}
@@ -8,7 +8,7 @@ export const authDefaultStore = {
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 
-const authReducer = (state = authDefaultStore, action) => {
+const authReducer = (state = authDefault, action) => {
   switch (action.type) {
     case LOGIN:
       return {
