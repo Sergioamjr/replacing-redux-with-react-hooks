@@ -1,12 +1,37 @@
 import React from "react";
-import Test from "./component/test";
+import PropTypes from "prop-types";
+import Counter from "./container/counter";
+import Login from "./container/login";
+import Connect from "./store/connect";
+import Header from "./container/header";
 
-const App = () => {
+const App = props => {
   return (
-    <div className="App">
-      <Test ola={true} />
+    <div className="full-screen">
+      <div className="d-flex d-flex-align-center d-flex-justify-center h-100">
+        {props.auth.isLogged ? (
+          <div>
+            <Header />
+            <Counter />
+          </div>
+        ) : (
+          <Login />
+        )}
+      </div>
     </div>
   );
 };
 
-export default App;
+App.propTypes = {
+  auth: PropTypes.shape({
+    isLogged: PropTypes.bool
+  }).isRequired
+};
+
+const mapStateToProps = ({ auth }) => {
+  return {
+    auth
+  };
+};
+
+export default Connect(mapStateToProps)(App);

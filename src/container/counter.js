@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ConnectTo from "../store/config/connect";
+import ConnectTo from "../store/connect";
 import { DecrementCounter, IncrementCounter } from "../store/reducers/counter";
 
 const Counter = ({ dispatch, counter }) => {
