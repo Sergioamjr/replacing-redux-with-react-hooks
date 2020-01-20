@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StoreContext } from "./hooks";
-import reducers from "./reducers";
+import useCombinedReducers from "./hooks/useCombinedReducers";
+import { storeContext as StoreContext } from "./hooks/useStore";
 
 const Store = ({ children }) => {
-  const { store, dispatchs } = reducers();
+  const { store, reducers } = useCombinedReducers();
 
   const triggerDispatchs = action => {
-    for (let i = 0; i < dispatchs.length; i++) {
-      dispatchs[i](action);
+    for (let i = 0; i < reducers.length; i++) {
+      reducers[i](action);
     }
   };
 

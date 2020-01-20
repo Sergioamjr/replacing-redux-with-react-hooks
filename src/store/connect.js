@@ -1,5 +1,5 @@
 import React from "react";
-import { StoreContext } from "./hooks";
+import { storeContext as StoreContext } from "./hooks/useStore";
 
 const returnPropsAsDefault = (store, props) => props;
 
