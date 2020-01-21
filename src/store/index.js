@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import useCombinedReducers from "./hooks/useCombinedReducers";
 import { storeContext as StoreContext } from "./hooks/useStore";
+import middleware from "./middleware";
 
 const Store = ({ children }) => {
   const { store, reducers } = useCombinedReducers();
@@ -12,11 +13,15 @@ const Store = ({ children }) => {
     }
   };
 
+  const withMiddleware = action => {
+    middleware(action)(triggerDispatchs);
+  };
+
   return (
     <StoreContext.Provider
       value={{
         store,
-        dispatch: action => triggerDispatchs(action)
+        dispatch: withMiddleware
       }}
     >
       {children}

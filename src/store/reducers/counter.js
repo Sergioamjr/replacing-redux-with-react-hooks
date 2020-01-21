@@ -2,35 +2,40 @@ export const counterDefault = {
   counter: 0
 };
 
-export const COUNTER_INC = "COUNTER_INC";
-export const COUNTER_DEC = "COUNTER_DEC";
+export const INCREMENT = "INCREMENT";
+export const DECREMENT = "DECREMENT";
+export const RESET = "RESET";
 
 const counterReducer = (state = counterDefault, action) => {
   switch (action.type) {
-    case COUNTER_INC:
+    case INCREMENT:
       return {
         ...state,
         counter: state.counter + 1
       };
-    case COUNTER_DEC:
+    case DECREMENT:
       return {
         ...state,
         counter: state.counter - 1
+      };
+    case RESET:
+      return {
+        counter: 0
       };
     default:
       return state;
   }
 };
 
-export const IncrementCounter = () => {
+export const incrementAction = () => {
   return {
-    type: COUNTER_INC
+    type: INCREMENT
   };
 };
 
-export const DecrementCounter = () => {
+export const decrementAction = () => {
   return {
-    type: COUNTER_DEC
+    type: DECREMENT
   };
 };
 

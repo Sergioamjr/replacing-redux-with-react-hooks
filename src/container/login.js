@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Connect from "../store/connect";
-import { LogInUser } from "../store/reducers/auth";
+import { loginAction } from "../store/reducers/auth";
 
 const Login = ({ dispatch }) => {
   const [name, setName] = useState("");
   const changeNameHandler = ({ target: { value } }) => setName(value);
-  const onSubmitHandler = () => dispatch(LogInUser(name));
+  const onSubmitHandler = () => dispatch(loginAction(name));
   return (
     <div>
       <form>

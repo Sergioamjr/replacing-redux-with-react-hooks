@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Connect from "../store/connect";
-import { LogOutUser } from "../store/reducers/auth";
+import { logoutAction } from "../store/reducers/auth";
 
 const Header = ({ dispatch, auth }) => {
-  const logoutHandler = () => dispatch(LogOutUser());
+  const logoutHandler = () => dispatch(logoutAction());
   return (
     <div className="top-position d-flex d-flex-justify-between d-flex-align-center w-100">
       <div className="container w-100">

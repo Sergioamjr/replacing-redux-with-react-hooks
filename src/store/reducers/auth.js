@@ -31,14 +31,14 @@ const authReducer = (state = authDefault, action) => {
   }
 };
 
-export const LogInUser = user => {
+export const loginAction = user => {
   return {
     type: LOGIN,
     payload: user
   };
 };
 
-export const LogOutUser = () => {
+export const logoutAction = () => {
   return {
     type: LOGOUT
   };

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ConnectTo from "../store/connect";
-import { DecrementCounter, IncrementCounter } from "../store/reducers/counter";
+import { decrementAction, incrementAction } from "../store/reducers/counter";
 
 const Counter = ({ dispatch, counter }) => {
-  const DecrementCounterHandler = () => dispatch(DecrementCounter());
-  const IncrementCounterHandler = () => dispatch(IncrementCounter());
+  const decrementHandler = () => dispatch(decrementAction());
+  const incrementHandler = () => dispatch(incrementAction());
 
   return (
     <div>
@@ -14,14 +14,14 @@ const Counter = ({ dispatch, counter }) => {
         <button
           aria-label="Menos 1"
           className="btn m-left-20 m-right-20"
-          onClick={DecrementCounterHandler}
+          onClick={decrementHandler}
         >
           -
         </button>
         <button
           aria-label="Mais 1"
           className="btn m-left-20 m-right-20"
-          onClick={IncrementCounterHandler}
+          onClick={incrementHandler}
         >
           +
         </button>
