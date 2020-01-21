@@ -39,4 +39,10 @@ export const decrementAction = () => {
   };
 };
 
+export const resetAction = () => {
+  return {
+    type: RESET
+  };
+};
+
 export default counterReducer;

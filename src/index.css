@@ -37,6 +37,12 @@ body {
   color: #fff;
   font-size: 22px;
   padding: 15px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: default;
+  opacity: 0.4;
 }
 
 .input {

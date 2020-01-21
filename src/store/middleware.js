@@ -1,13 +1,10 @@
-import { LOGOUT, LOGIN } from "./reducers/auth";
+import { LOGOUT } from "./reducers/auth";
+import { resetAction } from "./reducers/counter";
 
-export default action => next => {
-  if (action.type === LOGIN) {
-    console.log(action);
-  }
-
+export default action => dispatch => {
   if (action.type === LOGOUT) {
-    console.log(action);
+    dispatch(resetAction());
   }
 
-  next(action);
+  dispatch(action);
 };
