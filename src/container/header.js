@@ -1,9 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Connect from "../store/connect";
 import { logoutAction } from "../store/reducers/auth";
+import useStore from "../store/hooks/useStore";
 
-const Header = ({ dispatch, auth }) => {
+const Header = () => {
+  const {
+    dispatch,
+    store: { auth }
+  } = useStore();
   const logoutHandler = () => dispatch(logoutAction());
   return (
     <div className="top-position d-flex d-flex-justify-between d-flex-align-center w-100">
@@ -27,17 +30,4 @@ const Header = ({ dispatch, auth }) => {
   );
 };
 
-Header.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-  auth: PropTypes.shape({
-    user: PropTypes.string
-  }).isRequired
-};
-
-const mapStateToProps = ({ auth }) => {
-  return {
-    auth
-  };
-};
-
-export default Connect(mapStateToProps)(Header);
+export default Header;
