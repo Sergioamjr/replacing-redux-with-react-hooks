@@ -11,8 +11,8 @@ const Login = ({ dispatch }) => {
     <div>
       <form>
         <p className="logo p-center m-bottom-20">
-          Context + useState ={" "}
-          <span role="img" aria-label="Coração">
+          React Hooks{" "}
+          <span role="img" aria-label="Heart">
             ❤️
           </span>
         </p>
@@ -20,7 +20,7 @@ const Login = ({ dispatch }) => {
           value={name}
           onChange={changeNameHandler}
           type="text"
-          placeholder="Nome"
+          placeholder="Name"
           className="input"
         />
         <button
@@ -28,7 +28,7 @@ const Login = ({ dispatch }) => {
           disabled={!name}
           className="btn w-100"
         >
-          Entrar
+          Login
         </button>
       </form>
     </div>

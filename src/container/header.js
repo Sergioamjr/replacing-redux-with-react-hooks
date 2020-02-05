@@ -13,15 +13,15 @@ const Header = () => {
       <div className="container w-100">
         <div className="d-flex d-flex-justify-between d-flex-align-center w-100">
           <p className="logo p-center">
-            Context + useState ={" "}
-            <span role="img" aria-label="Coração">
+            React Hooks
+            <span role="img" aria-label="Heart">
               ❤️
             </span>
           </p>
           <div className="d-flex d-flex-align-center">
-            <p className="m-right-10 color-dark">Olá, {auth.user}</p>
+            <p className="m-right-10 color-dark">Hi, {auth.user}</p>
             <button onClick={logoutHandler} className="btn logout">
-              Sair
+              Logout
             </button>
           </div>
         </div>
