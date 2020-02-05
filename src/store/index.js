@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import useCombinedReducers from "./hooks/useCombinedReducers";
-import { storeContext as StoreContext } from "./hooks/useStore";
+import { StoreContext } from "./hooks/useStore";
 import middleware from "./middleware";
 
-const Store = ({ children }) => {
+const Provider = ({ children }) => {
   const { store, reducers } = useCombinedReducers();
 
   const triggerDispatchs = action => {
@@ -29,8 +29,8 @@ const Store = ({ children }) => {
   );
 };
 
-Store.propTypes = {
+Provider.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export default Store;
+export default Provider;

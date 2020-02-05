@@ -7,7 +7,7 @@ export const defaultStore = {
   dispatch: () => {}
 };
 
-export const storeContext = createContext(defaultStore);
+export const StoreContext = createContext(defaultStore);
 export default () => {
-  return useContext(storeContext);
+  return useContext(StoreContext);
 };
