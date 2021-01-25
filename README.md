@@ -8,7 +8,7 @@ For more information and details, I highly recommend that you read [my article.]
 
 ## To clone the repository
 
-`git clone git@github.com:Sergioamjr/replacing-redux-to-hooks.git`
+`git clone git@github.com:Sergioamjr/replacing-redux-with-react-hooks.git`
 
 ## To install the dependencies
 
